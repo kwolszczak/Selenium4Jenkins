@@ -15,10 +15,29 @@ import org.slf4j.LoggerFactory;
 
 class SimpleTest  {
 
+    @Test
+    @DisplayName("firefox")
+    void firefox_test() {
+
+        FirefoxOptions opt = new FirefoxOptions();
+
+        // Set headless mode
+        opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
+
+        WebDriver driver = new FirefoxDriver(opt);
+        driver.get("https://www.selenium.dev/");
+        String expectedTitle = "Selenium";
+        String title = driver.getTitle();
+        System.out.println(title);
+        Assertions.assertThat(title).isEqualTo(expectedTitle);
+        driver.quit();
+    }
+
 
     @Test
     @DisplayName("1. Selenium - smoke test")
-    void verify_webSelenium_hasTitle() {
+    void chrome_test() {
 
         ChromeOptions opt = new ChromeOptions();
 
@@ -35,23 +54,6 @@ class SimpleTest  {
         driver.quit();
     }
 
-    @Test
-    @DisplayName("firefox")
-    void verify_webSelenium_firefox() {
 
-        FirefoxOptions opt = new FirefoxOptions();
-
-        // Set headless mode
-        opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
-        opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
-
-        WebDriver driver = new FirefoxDriver(opt);
-        driver.get("https://www.selenium.dev/");
-        String expectedTitle = "Selenium";
-        String title = driver.getTitle();
-        System.out.println(title);
-        Assertions.assertThat(title).isEqualTo(expectedTitle);
-        driver.quit();
-    }
 
 }
