@@ -5,7 +5,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +19,12 @@ class SimpleTest  {
     @DisplayName("1. Selenium - smoke test")
     void verify_webSelenium_hasTitle() {
 
-        WebDriver driver = new FirefoxDriver();
+        ChromeOptions opt = new ChromeOptions();
+
+        // Set headless mode
+        opt.addArguments("headless");
+
+        WebDriver driver = new ChromeDriver();
         driver.get("https://www.selenium.dev/");
         String expectedTitle = "Selenium";
         String title = driver.getTitle();
