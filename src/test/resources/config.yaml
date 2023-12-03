@@ -1,0 +1,33 @@
+environment:
+  - active: true
+    name: "test"
+    url: "https://logback.qos.ch/"
+    eTitle: "Logback Home"
+    webElementTimeout: 5
+
+  - active: false
+    name: "uat"
+    url: "https://www.selenium.dev/"
+    eTitle: "Selenium"
+    webElementTimeout: 5
+
+
+browser:
+  name: "chrome"
+  version: "116"
+  downloadDir: "src\\download\\"
+  attachScreenshot: true
+  headless: true
+
+sqlDB:
+  name: "test"
+  ip: 127.20.1.56
+  port: 5056
+  user: "root"
+  password: "admin"
+
+proxy: 33.333.33:3321
+
+
+
+
