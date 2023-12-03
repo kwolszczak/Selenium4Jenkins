@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
 class MainTest extends BaseTest {
 
     private final Logger log = LoggerFactory.getLogger(MainTest.class);
