@@ -23,7 +23,7 @@ class SimpleTest  {
 
         // Set headless mode
       //  opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
-      //  opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
+     opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
 
         WebDriver driver = new FirefoxDriver(opt);
         driver.get("https://www.selenium.dev/");
@@ -43,7 +43,7 @@ class SimpleTest  {
 
         // Set headless mode
        // opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
-      //  opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
+     opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
 
         WebDriver driver = new ChromeDriver(opt);
         driver.get("https://www.selenium.dev/");
