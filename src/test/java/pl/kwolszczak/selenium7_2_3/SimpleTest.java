@@ -35,4 +35,23 @@ class SimpleTest  {
         driver.quit();
     }
 
+    @Test
+    @DisplayName("firefox")
+    void verify_webSelenium_firefox() {
+
+        FirefoxOptions opt = new FirefoxOptions();
+
+        // Set headless mode
+        opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
+
+        WebDriver driver = new FirefoxDriver(opt);
+        driver.get("https://www.selenium.dev/");
+        String expectedTitle = "Selenium";
+        String title = driver.getTitle();
+        System.out.println(title);
+        Assertions.assertThat(title).isEqualTo(expectedTitle);
+        driver.quit();
+    }
+
 }
