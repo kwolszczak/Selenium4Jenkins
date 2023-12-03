@@ -23,6 +23,7 @@ class SimpleTest  {
         String title = driver.getTitle();
         System.out.println(title);
         Assertions.assertThat(title).isEqualTo(expectedTitle);
+        driver.quit();
     }
 
 }
