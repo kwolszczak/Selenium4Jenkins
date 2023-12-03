@@ -1,0 +1,3 @@
+env: test
+url: "https://www.selenium.dev"
+timeout: 5
