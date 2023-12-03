@@ -11,6 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.kwolszczak.selenium7_2_3.configuration.AppConf;
+import pl.kwolszczak.selenium7_2_3.configuration.TestDataConf;
 
 
 class SimpleTest  {
@@ -38,6 +40,8 @@ class SimpleTest  {
     @Test
     @DisplayName("1. Selenium - smoke test")
     void chrome_test() {
+        TestDataConf conf = TestDataConf.getInstance();
+        System.out.println(System.getProperty("env"));
 
         ChromeOptions opt = new ChromeOptions();
 
