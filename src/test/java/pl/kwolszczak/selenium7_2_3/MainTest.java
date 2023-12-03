@@ -19,7 +19,7 @@ class MainTest extends BaseTest {
 
         String expectedTitle = System.getProperty("environment.eTitle");
         String title = driver.getTitle();
-
+        System.out.println(title);
         Assertions.assertThat(title).isEqualTo(expectedTitle);
     }
 
@@ -29,7 +29,7 @@ class MainTest extends BaseTest {
 
         String expectedTitle = System.getProperty("environment.eTitle");
         String title = driver.getTitle();
-
+        System.out.println(title);
         Assertions.assertThat(title).isEqualTo(expectedTitle);
     }
 }
