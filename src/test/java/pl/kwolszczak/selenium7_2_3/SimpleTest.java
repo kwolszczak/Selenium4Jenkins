@@ -23,10 +23,10 @@ class SimpleTest  {
 
         // Set headless mode
         opt.addArguments("headless");
-        opt.addArguments("--disable-dev-shm-usage");
+        opt.addArguments("disable-dev-shm-usage");
 
-        opt.addArguments("--ignore-ssl-errors=yes");
-        opt.addArguments("--ignore-certificate-errors");
+        opt.addArguments("ignore-ssl-errors=yes");
+        opt.addArguments("ignore-certificate-errors");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.selenium.dev/");
