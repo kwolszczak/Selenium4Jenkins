@@ -23,6 +23,7 @@ class SimpleTest  {
 
         // Set headless mode
         opt.addArguments("headless");
+        opt.addArguments("--disable-dev-shm-usage");
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.selenium.dev/");
