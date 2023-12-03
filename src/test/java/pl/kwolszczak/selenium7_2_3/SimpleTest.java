@@ -17,7 +17,7 @@ class SimpleTest  {
     @DisplayName("1. Selenium - smoke test")
     void verify_webSelenium_hasTitle() {
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new FirefoxDriver();
         driver.get("https://www.selenium.dev/");
         String expectedTitle = "Selenium";
         String title = driver.getTitle();
