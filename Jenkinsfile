@@ -7,12 +7,7 @@ pipeline {
 
 
     stages {
-        stage('Get Repo') {
-            steps {
-                echo '>>> Connecting to Git repo >>>>>'
-                git branch: "${branch}", url: "https://github.com/kwolszczak/Selenium4Jenkins.git"
-            }
-        }
+
         stage('Configure YAML') {
             steps {
                 script {
