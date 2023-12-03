@@ -3,6 +3,7 @@ package pl.kwolszczak.selenium7_2_3;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,9 +23,10 @@ class SimpleTest  {
         ChromeOptions opt = new ChromeOptions();
 
         // Set headless mode
+        opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
         opt.addArguments("--headless","--whitelisted-ips","--no-sandbox","--disable-extensions");
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(opt);
         driver.get("https://www.selenium.dev/");
         String expectedTitle = "Selenium";
         String title = driver.getTitle();
