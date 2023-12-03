@@ -51,6 +51,7 @@ public class BrowserConf {
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("download.default_directory", file.getAbsolutePath());
                 chromeOptions.setExperimentalOption("prefs", prefs);
+
                 driver = new ChromeDriver(chromeOptions);
                 driver.manage().window().maximize();
 
